@@ -1,6 +1,6 @@
 body
 {
-  background : grey;
+  background : #f2f2f2;
 }
 #top-bar {
   background: #666;
@@ -8,16 +8,28 @@ body
   overflow: hidden;
   color: white;
 }
-#message
+#messageIntro
 {
-  background: white;
+
   width: 100%;
   height: 15vh;
-  padding-left: 5%;
+  padding-left: 6%;
   padding-top: 1%;
+  visibility: true;
+  opacity: 75%;
 }
 li
 {
   display: flex;
 
+}
+input
+{
+  height: 200%;
+  width: 50%;
+  display: flex;
+  align-content: center;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
 }
