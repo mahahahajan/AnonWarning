@@ -23,6 +23,18 @@ li
   display: flex;
 
 }
+footer
+{
+  align-content: center;
+  margin-top: 30%;
+  width: 100%;
+  display: flex;
+}
+textarea
+{
+  width: 100%;
+  align-content: center;
+}
 input
 {
   height: 200%;

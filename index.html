@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script type="text/javascript" src="https://cdn.rawgit.com/hackedu/hack-camp/62cb48e3c30986350e71fd3153501883bee532c1/cohort_4/playbook/workshops/maestro/src/lib/maestro.js"></script>
-      <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="main.css">
-  </head>
-  <body>
-    <section id="module">
-      <header id="top-bar">
-        <h1> <input id="victimNum" type="text" name="firstname" placeholder="Number of Victim (NNN-NNN-NNNN)"> </input></h1>
-      </header>
 
-      <ol id="convo">
-        <li>
-          <div id="messageIntro">
-            <p>
-              Welcom to creeper bot! Go ahead and type in a number above, and type messages down below.
-            </p>
-          </div>
-        </li>
-        <textarea id="newMsg"></textarea>
-        <button id="submit" type="submit" onclick="sendSms()"> Send</button>
-      </ol>
+<head>
+  <script type="text/javascript" src="https://cdn.rawgit.com/hackedu/hack-camp/62cb48e3c30986350e71fd3153501883bee532c1/cohort_4/playbook/workshops/maestro/src/lib/maestro.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
 
-    </section>
-  </body>
+<body>
+  <section id="module">
+    <header id="top-bar">
+      <h1>
+        <input id="victimNum" type="text" name="firstname" placeholder="Number of Victim (NNN-NNN-NNNN)"> </input>
+      </h1>
+    </header>
+
+    <ol id="convo">
+      <li>
+        <div id="messageIntro">
+          <p>
+            Welcom to creeper bot! Go ahead and type in a number above, and type messages down below.
+          </p>
+        </div>
+      </li>
+    </ol>
+    <footer>
+      <textarea id="newMsg"></textarea>
+      <button id="submit" type="submit" onclick="sendSms()"> Send</button>
+    </footer>
+  </section>
+</body>
+
 </html>
