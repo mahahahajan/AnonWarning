@@ -1,5 +1,28 @@
+var number;
+// var name = prompt("Target's name?")
+// var message = prompt("Enter your message");
+// sendSms(message);
+// contacts = ["415-298-4987"];
+$('#victimNum').keypress(function(e) {
+  if(e.which == 13) {
+    number = $('#victimNum').val();
+    // console.log("num"+$('#victimNum').text())
+    $('#victimNum').hide();
+  }
+});
+maestro.Twilio.recieveSms(function(reply){
+  debugger;
+  console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
+});
+function sendSms(){
+  var msg = $('#newMsg').val();
+  maestro.Twilio.sendSms(number, msg);
 
-maestro.Twilio.sendSms(number, message);
+  // contacts.push = number;
+  console.log("num: "+number+"msg: "+msg);
+  console.log("sent!");
+}
+
 
 /*
 if(whoYouGonnaCall == "Next"){
