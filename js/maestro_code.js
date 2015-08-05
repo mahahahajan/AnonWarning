@@ -1,14 +1,24 @@
 var number;
+var entered;
 // var name = prompt("Target's name?")
 // var message = prompt("Enter your message");
 // sendSms(message);
 // contacts = ["415-298-4987"];
-$('#victimNum').keypress(function(e) {
+function checkNum(e){
   if(e.which == 13) {
-    number = $('#victimNum').val();
-    // console.log("num"+$('#victimNum').text())
-    $('#victimNum').hide();
+    entered = true;
+    enterNum();
+    return true;
   }
+  return false;
+}
+function enterNum() {
+  number = $('#victimNum').val();
+  // console.log("num"+$('#victimNum').text())
+  $('#victimNum').hide();
+}
+$('#victimNum').keypress(function(e) {
+  checkNum(e);
 });
 maestro.Twilio.recieveSms(function(reply){
   $('#messageIntro').append('<p class = "you">'+'<b>'+'Victim: '+'</b>'+reply.Body+'</p>');
@@ -16,6 +26,9 @@ maestro.Twilio.recieveSms(function(reply){
   console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
 });
 function sendSms(){
+  if(!(entered)){
+    enterNum();
+  }
   var msg = $('#newMsg').val();
   maestro.Twilio.sendSms(number, msg);
   // contacts.push = number;
