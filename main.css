@@ -1,0 +1,23 @@
+body
+{
+  background : grey;
+}
+#top-bar {
+  background: #666;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+#message
+{
+  background: white;
+  width: 100%;
+  height: 15vh;
+  padding-left: 5%;
+  padding-top: 1%;
+}
+li
+{
+  display: flex;
+
+}

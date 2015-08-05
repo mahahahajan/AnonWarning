@@ -1,5 +1,4 @@
-var number = prompt("Enter target number");
-var message = prompt("Enter your message");
+
 maestro.Twilio.sendSms(number, message);
 
 /*
