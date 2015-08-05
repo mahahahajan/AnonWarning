@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <script type="text/javascript" src="https://cdn.rawgit.com/hackedu/hack-camp/62cb48e3c30986350e71fd3153501883bee532c1/cohort_4/playbook/workshops/maestro/src/lib/maestro.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
   <script src="js/script.js"></script>
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
-
+<style media="screen">
+  .me{
+    color: purple;
+  }
+  .you{
+    color: green;
+  }
+</style>
 <body>
   <section id="module">
     <header id="top-bar">
@@ -19,8 +25,8 @@
     <ol id="convo">
       <li>
         <div id="messageIntro">
-          <p>
-            Welcom to creeper bot! Go ahead and type in a number above, and type messages down below.
+          <p id="welcome">
+            Welcome to creeper bot! Go ahead and type in a number above, and type messages down below.
           </p>
         </div>
       </li>
@@ -31,5 +37,4 @@
     </footer>
   </section>
 </body>
-
 </html>

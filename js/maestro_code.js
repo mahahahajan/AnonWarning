@@ -11,16 +11,19 @@ $('#victimNum').keypress(function(e) {
   }
 });
 maestro.Twilio.recieveSms(function(reply){
-  debugger;
+  $('#messageIntro').append('<p class = "you">'+'<b>'+'Victim: '+'</b>'+reply.Body+'</p>');
+  $('#welcome').hide();
   console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
 });
 function sendSms(){
   var msg = $('#newMsg').val();
   maestro.Twilio.sendSms(number, msg);
-
   // contacts.push = number;
   console.log("num: "+number+"msg: "+msg);
   console.log("sent!");
+  $('#messageIntro').append('<p class="me">'+'<b>'+'Me: '+'</b>'+msg+'</p>');
+  $('#welcome').hide();
+  $('#newMsg').val(" ");
 }
 
 
