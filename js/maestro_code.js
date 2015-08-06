@@ -1,5 +1,6 @@
 var number;
 var entered;
+var audio = new Audio("http://www.oringz.com/oringz-uploads/d0_oringz-pack-nine-06.mp3");
 // var name = prompt("Target's name?")
 // var message = prompt("Enter your message");
 // sendSms(message);
@@ -24,6 +25,7 @@ $('#newMsg').keypress(function(e) {
   }
 });
 maestro.Twilio.recieveSms(function(reply){
+  audio.play();
   $('#messageIntro').append('<p class = "you">'+'<b>'+'Victim: '+'</b>'+reply.Body+'</p>');
   $('#welcome').hide();
   // console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
