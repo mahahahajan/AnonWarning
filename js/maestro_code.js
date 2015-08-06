@@ -51,7 +51,7 @@ $('#newMsg').keypress(function(e) {
 });
 maestro.Twilio.recieveSms(function(reply){
   audio.play();
-  $('#messageIntro').append('<p class = "you">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://media3.giphy.com/media/nQ8XtX3ctBCkE/giphy.gif">'+'<b>'+'Victim: '+'</b>'+reply.Body+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
+  $('#messageIntro').append('<p class = "you">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="https://s-media-cache-ak0.pinimg.com/736x/a0/d8/8f/a0d88f742bd61c61320a35b5a295fb5b.jpg">'+'<b>'+'Victim: '+'</b>'+reply.Body+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
   $('#welcome').hide();
   // console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
 });
@@ -79,7 +79,7 @@ function sendSms(){
     // contacts.push = number;
     // console.log("num: "+number+"msg: "+msg);
     // console.log("sent!");
-    $('#messageIntro').append('<p class = "me">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://img.pandawhale.com/post-27657-crazy-hat-with-bread-on-head-g-Tnb2.gif">'+'<b>'+' Me: '+'</b>'+msg+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
+    $('#messageIntro').append('<p class = "me">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://imgs.tuts.dragoart.com/how-to-draw-jigsaw-jigsaw-saw_1_000000009688_5.jpg">'+'<b>'+' Me: '+'</b>'+msg+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
     $('#welcome').hide();
     $('#newMsg').val(" ");
   }
