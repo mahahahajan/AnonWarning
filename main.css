@@ -1,22 +1,45 @@
 body
 {
-  background : #f2f2f2;
+  background : #95a5a6;
+  padding: 0;
+  margin : 0;
 }
 #top-bar {
-  background: #666;
+  background: #2c3e50;
   position: relative;
   overflow: hidden;
   color: white;
 }
-#messageIntro
+#messageIntroSelf
+{
+  align-content: left;
+  display: flex;
+
+  padding: 0;
+  height: 15vh;
+}
+#messageIntroOther
 {
 
-  width: 100%;
+  display: flex;
+  align-content: right;
+  padding: 0;
+
   height: 15vh;
-  padding-left: 6%;
-  padding-top: 1%;
-  visibility: true;
-  opacity: 75%;
+}
+#convo
+{
+  margin: 0;
+  padding: 0;
+}
+#selfMessages
+{
+  align-content: right;
+  width: 80%;
+  padding: 0;
+  height: 15vh;
+  display: flex;
+  justify-content: flex-end;
 }
 li
 {

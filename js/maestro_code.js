@@ -21,7 +21,7 @@ $('#victimNum').keypress(function(e) {
   checkNum(e);
 });
 maestro.Twilio.recieveSms(function(reply){
-  $('#messageIntro').append('<p class = "you">'+'<b>'+'Victim: '+'</b>'+reply.Body+'</p>');
+  $('#messageIntroOther').append('<p class = "you">'+'<b>'+'Victim: '+'</b>'+reply.Body+'</p>');
   $('#welcome').hide();
   console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
 });
@@ -34,7 +34,7 @@ function sendSms(){
   // contacts.push = number;
   console.log("num: "+number+"msg: "+msg);
   console.log("sent!");
-  $('#messageIntro').append('<p class="me">'+'<b>'+'Me: '+'</b>'+msg+'</p>');
+  $('#messageIntroSelf').append('<p class="me">'+'<b>'+'Me: '+'</b>'+msg+'</p>');
   $('#welcome').hide();
   $('#newMsg').val(" ");
 }

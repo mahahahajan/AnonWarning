@@ -8,10 +8,21 @@
 </head>
 <style media="screen">
   .me{
-    color: purple;
+    width: 100%;
+    border: 1px solid #E0E0E0;
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    color: #1a1a1a;
+
   }
   .you{
-    color: green;
+    border: 1px solid #E0E0E0;
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    align-content: right;
+    color: #1a1a1a;
   }
 </style>
 <body>
@@ -24,9 +35,14 @@
 
     <ol id="convo">
       <li>
-        <div id="messageIntro">
+        <div id="messageIntroSelf">
           <p id="welcome">
             Welcome to creeper bot! Go ahead and type in a number above, and type messages down below.
+          </p>
+        </div>
+        <div id="messageIntroOther">
+          <p id="welcome">
+            
           </p>
         </div>
       </li>
