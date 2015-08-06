@@ -62,12 +62,26 @@ function sendSms(){
   }
   var msg = $('#newMsg').val();
   maestro.Twilio.sendSms(number, msg);
-  // var date = new Date();
-  // fixMinutes(date);
-  // contacts.push = number;
-  console.log("num: "+number+"msg: "+msg);
-  console.log("sent!");
-  $('#messageIntro').append('<p class = "me">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://img.pandawhale.com/post-27657-crazy-hat-with-bread-on-head-g-Tnb2.gif">'+'<b>'+' Me: '+'</b>'+msg+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
-  $('#welcome').hide();
-  $('#newMsg').val(" ");
+
+  if(!(/\S/.test($('#newMsg').val()))){
+    console.log("homg")
+    error = "please type a message before sending";
+    $('#errormsg').show();
+    $('#errormsg').html(error)
+    return false;
+  }
+  if(enterNum()===true){
+    console.log("display")
+    $('#errormsg').hide();
+    var msg = $('#newMsg').val();
+    maestro.Twilio.sendSms(number, msg);
+    // var date = new Date();
+    // fixMinutes(date);
+    // contacts.push = number;
+    // console.log("num: "+number+"msg: "+msg);
+    // console.log("sent!");
+    $('#messageIntro').append('<p class = "me">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://img.pandawhale.com/post-27657-crazy-hat-with-bread-on-head-g-Tnb2.gif">'+'<b>'+' Me: '+'</b>'+msg+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
+    $('#welcome').hide();
+    $('#newMsg').val(" ");
+  }
 }
