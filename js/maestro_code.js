@@ -1,5 +1,10 @@
 var number;
 var entered;
+var picture;
+var image_width = 70;
+var image_height = 70;
+var minutes;
+var audio = new Audio("http://www.oringz.com/oringz-uploads/d0_oringz-pack-nine-06.mp3");
 // var name = prompt("Target's name?")
 // var message = prompt("Enter your message");
 // sendSms(message);
@@ -8,9 +13,7 @@ function checkNum(e){
   if(e.which == 13) {
     entered = true;
     enterNum();
-    return true;
   }
-  return false;
 }
 function enterNum() {
   number = $('#victimNum').val();
@@ -20,10 +23,16 @@ function enterNum() {
 $('#victimNum').keypress(function(e) {
   checkNum(e);
 });
+$('#newMsg').keypress(function(e) {
+  if(e.which == 13) {
+    sendSms();
+  }
+});
 maestro.Twilio.recieveSms(function(reply){
-  $('#messageIntroOther').append('<p class = "you">'+'<b>'+'Victim: '+'</b>'+reply.Body+'</p>');
+  audio.play();
+  $('#messageIntroOther').append('<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://media3.giphy.com/media/nQ8XtX3ctBCkE/giphy.gif">'+'<p>'+(new Date()).toTimeString().substr(0,5)+'<p class = "you">'+'<b>'+'Victim: '+'</b>'+reply.Body+'</p></p>');
   $('#welcome').hide();
-  console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
+  // console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
 });
 function sendSms(){
   if(!(entered)){
@@ -31,15 +40,15 @@ function sendSms(){
   }
   var msg = $('#newMsg').val();
   maestro.Twilio.sendSms(number, msg);
+  // var date = new Date();
+  // fixMinutes(date);
   // contacts.push = number;
   console.log("num: "+number+"msg: "+msg);
   console.log("sent!");
-  $('#messageIntroSelf').append('<p class="me">'+'<b>'+'Me: '+'</b>'+msg+'</p>');
+  $('#messageIntroSelf').append('<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://img.pandawhale.com/post-27657-crazy-hat-with-bread-on-head-g-Tnb2.gif">'+'<p>'+(new Date()).toTimeString().substr(0,5)+'<p class = "me"> <b>'+'Me: '+'</b>'+msg+'</p> </p>');
   $('#welcome').hide();
   $('#newMsg').val(" ");
 }
-
-
 /*
 if(whoYouGonnaCall == "Next"){
   maestro.Twilio.callAndSay("925-487-2366", "Hi this is Sam from 31 Flavors, if you can name 31 Flavors in 31 seconds you can win 31 thousand dollars, ready go!! Brought to you by Pulkit Industries");
