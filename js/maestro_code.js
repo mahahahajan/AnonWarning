@@ -52,7 +52,7 @@ $('#newMsg').keypress(function(e) {
 });
 maestro.Twilio.recieveSms(function(reply){
   audio.play();
-  $('#messageIntro').append('<p class = "you">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://media3.giphy.com/media/nQ8XtX3ctBCkE/giphy.gif">'+(new Date()).toTimeString().substr(0,5)+'<b>'+'Victim: '+'</b>'+reply.Body+'</p>');
+  $('#messageIntro').append('<p class = "you">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://media3.giphy.com/media/nQ8XtX3ctBCkE/giphy.gif">'+'<b>'+'Victim: '+'</b>'+reply.Body+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
   $('#welcome').hide();
   // console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
 });
@@ -67,7 +67,7 @@ function sendSms(){
   // contacts.push = number;
   console.log("num: "+number+"msg: "+msg);
   console.log("sent!");
-  $('#messageIntro').append('<p class = "me">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://img.pandawhale.com/post-27657-crazy-hat-with-bread-on-head-g-Tnb2.gif">'+(new Date()).toTimeString().substr(0,5)+'<b>'+' Me: '+'</b>'+msg+'</p>');
+  $('#messageIntro').append('<p class = "me">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="http://img.pandawhale.com/post-27657-crazy-hat-with-bread-on-head-g-Tnb2.gif">'+'<b>'+' Me: '+'</b>'+msg+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
   $('#welcome').hide();
   $('#newMsg').val(" ");
 }
