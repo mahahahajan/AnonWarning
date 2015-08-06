@@ -16,10 +16,10 @@ function checkNum(e){
   }
 }
 function numValid(){
-  if($('#victimNum').val().split("").length===7){
+  if($('#numVictim').val().split("").length===7){
     error = "Please input the area code of number you are trying to text";
   }
-  else if($('#victimNum').val().split("").length<=6||$('#victimNum').val().split("").length>12){
+  else if($('#numVictim').val().split("").length<=6||$('#numVictim').val().split("").length>12){
     error = "Please input a valid number";
   }
   else{
@@ -30,10 +30,10 @@ function numValid(){
 }
 function enterNum() {
   if(numValid()===true){
-    number = $('#victimNum').val();
-    // console.log("num"+$('#victimNum').text())
-    $('#victimNum').hide();
-    $('h1').html("Creeper Bot");
+    number = $('#numVictim').val();
+    // console.log("num"+$('#numVictim').text())
+    $('#numVictim').hide();
+    
     return true;
   }
   else{
@@ -42,7 +42,7 @@ function enterNum() {
     return false;
   }
 }
-$('#victimNum').keypress(function(e) {
+$('#numVictim').keypress(function(e) {
   checkNum(e);
 });
 $('#newMsg').keypress(function(e) {
