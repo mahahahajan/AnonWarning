@@ -71,8 +71,20 @@ footer
 }
 textarea
 {
-  width: 100%;
+  background-color: #ecf0f1;
+  width: 95%;
+  height: 6vh;
   align-content: center;
+}
+#submit
+{
+  background-color: #27ae60;
+  opacity: 75%;
+  width: 10%;
+  border: none;
+  color: white;
+  font-family: 'Roboto Condensed';
+  font-size: 110%;
 }
 input
 {
