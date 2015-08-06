@@ -86,6 +86,10 @@ textarea
   font-family: 'Roboto Condensed';
   font-size: 110%;
 }
+h1
+{
+  font-family: 'Roboto Condensed';
+}
 input
 {
   height: 200%;
