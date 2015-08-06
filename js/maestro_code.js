@@ -33,7 +33,7 @@ function enterNum() {
     number = $('#numVictim').val();
     // console.log("num"+$('#numVictim').text())
     $('#numVictim').hide();
-    
+    $('h1').html("Creeper Bot");
     return true;
   }
   else{
