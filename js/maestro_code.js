@@ -1,5 +1,4 @@
 var number;
-var entered;
 var picture;
 var image_width = 70;
 var image_height = 70;
