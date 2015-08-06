@@ -1,13 +1,13 @@
 body
 {
-  background : #d35400;
+  background : #2c3e50;
   padding: 0;
   margin : 0;
   color: white;
   font: Roboto;
 }
 #top-bar {
-  background: #2c3e50;
+  background: #8e44ad;
   position: relative;
   overflow: hidden;
   color: white;
