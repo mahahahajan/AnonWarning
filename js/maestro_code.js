@@ -12,7 +12,6 @@ var audio = new Audio("http://www.oringz.com/oringz-uploads/d0_oringz-pack-nine-
 // contacts = ["415-298-4987"];
 function checkNum(e){
   if(e.which == 13) {
-    entered = true;
     enterNum();
   }
 }
@@ -34,7 +33,7 @@ function enterNum() {
     number = $('#victimNum').val();
     // console.log("num"+$('#victimNum').text())
     $('#victimNum').hide();
-    $('h1').append("Creeper Bot");
+    $('h1').html("Creeper Bot");
     return true;
   }
   else{

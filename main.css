@@ -89,6 +89,9 @@ textarea
 h1
 {
   font-family: 'Roboto Condensed';
+  text-align: center;
+  font-size: 200%;
+  font-weight: bold;
 }
 input
 {
