@@ -49,7 +49,7 @@ $('#newMsg').keypress(function(e) {
     sendSms();
   }
 });
-maestro.Twilio.recieveSms(function(reply){
+Twilio.recieveSms(function(reply){
   audio.play();
   $('#messageIntro').append('<p class = "you">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="https://s-media-cache-ak0.pinimg.com/736x/a0/d8/8f/a0d88f742bd61c61320a35b5a295fb5b.jpg">'+'<b>'+'Victim: '+'</b>'+reply.Body+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
   $('#welcome').hide();
@@ -60,7 +60,7 @@ function sendSms(){
     enterNum();
   }
   var msg = $('#newMsg').val();
-  maestro.Twilio.sendSms(number, msg);
+  Twilio.sendSms(number, msg);
 
   if(!(/\S/.test($('#newMsg').val()))){
     console.log("homg")
@@ -73,7 +73,7 @@ function sendSms(){
     console.log("display")
     $('#errormsg').hide();
     var msg = $('#newMsg').val();
-    maestro.Twilio.sendSms(number, msg);
+    Twilio.sendSms(number, msg);
     // var date = new Date();
     // fixMinutes(date);
     // contacts.push = number;
