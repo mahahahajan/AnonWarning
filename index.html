@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//bit.ly/twilio-basic-v7"
-                  sid="ACe6632b96a922ac55c4f6c8839cb04216"
-                  token="206df56d942dd529424de27d501c556c">
-          </script>
-  <script type="text/javascript" src="https://cdn.rawgit.com/hackedu/hack-camp/62cb48e3c30986350e71fd3153501883bee532c1/cohort_4/playbook/workshops/maestro/src/lib/maestro.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
-  <script src="js/script.js"></script>
+
   <link rel="stylesheet" type="text/css" href="main.css">
   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 </head>
@@ -56,8 +50,16 @@
     <p id="errormsg"></p>
     <footer>
       <textarea id="newMsg"></textarea>
-      <button id="submit" type="submit" onclick="sendSms()"> Send</button>
+      <button id="submit" type="submit" onclick="sendMessage()"> Send</button>
     </footer>
   </section>
+  <script src="https://bit.ly/twilio-basic-v7"
+                  sid="ACe6632b96a922ac55c4f6c8839cb04216"
+                  token="206df56d942dd529424de27d501c556c">
+          </script>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="js/maestro_code.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

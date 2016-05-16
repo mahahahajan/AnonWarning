@@ -14,6 +14,7 @@ function checkNum(e){
     enterNum();
   }
 }
+
 function numValid(){
   if($('#victimNum').val().split("").length===7){
     error = "Please input the area code of number you are trying to text";
@@ -46,21 +47,21 @@ $('#victimNum').keypress(function(e) {
 });
 $('#newMsg').keypress(function(e) {
   if(e.which == 13) {
-    sendSms();
+    sendMessage();
   }
 });
-Twilio.recieveSms(function(reply){
+Twilio.getLatestMessage(function(reply){
   audio.play();
   $('#messageIntro').append('<p class = "you">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="https://s-media-cache-ak0.pinimg.com/736x/a0/d8/8f/a0d88f742bd61c61320a35b5a295fb5b.jpg">'+'<b>'+'Victim: '+'</b>'+reply.Body+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
   $('#welcome').hide();
   // console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
 });
-function sendSms(){
+function sendMessage(){
   if(enterNum()===false){
     enterNum();
   }
   var msg = $('#newMsg').val();
-  Twilio.sendSms(number, msg);
+  Twilio.sendMessage(number, msg);
 
   if(!(/\S/.test($('#newMsg').val()))){
     console.log("homg")
@@ -73,7 +74,7 @@ function sendSms(){
     console.log("display")
     $('#errormsg').hide();
     var msg = $('#newMsg').val();
-    Twilio.sendSms(number, msg);
+    Twilio.sendMessage(number, msg);
     // var date = new Date();
     // fixMinutes(date);
     // contacts.push = number;
