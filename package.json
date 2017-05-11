@@ -1,0 +1,29 @@
+{
+  "name": "anonymous-warning",
+  "version": "2.0.0",
+  "description": "Anoymously message family, friends, or others",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahahahajan/AnonWarning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahahahajan/AnonWarning/issues"
+  },
+  "homepage": "https://github.com/mahahahajan/AnonWarning#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "jade": "^1.11.0",
+    "morgan": "^1.8.1",
+    "serve-favicon": "^2.4.2",
+    "twilio": "^3.0.0"
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+</head>
+
+<style media="screen">
+  .me{
+
+    margin-right: 30%;
+    border: 1px solid black;
+    background-color: #2ecc71;
+    padding: 10px;
+    display: block;
+    color: white;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+  }
+  .you{
+    margin-left: 30%;
+    border: 1px solid black;
+    background-color: #3498db;
+    padding: 10px;
+    display: block;
+    align-content: right;
+    color: white;
+    font-family: 'Roboto Condensed';
+    font-weight: thin;
+  }
+</style>
+<body>
+  <section id="module">
+    <header id="top-bar">
+        <input id="victimNum" type="text" name="firstname" placeholder="Number of Victim (NNN-NNN-NNNN)"> </input>
+      <h1></h1>
+    </header>
+
+    <ol id="convo">
+      <li>
+        <div id="messageIntro">
+            <p id="welcome">
+              Welcome to creeper bot! Go ahead and type in a number above, and type messages down below.
+              Copyright Pulkit Industries.
+            </p>
+        </div>
+      </li>
+    </ol>
+    <p id="errormsg"></p>
+    <footer>
+      <textarea id="newMsg"></textarea>
+      <button id="submit" type="submit" onclick="sendMessage()"> Send</button>
+    </footer>
+  </section>
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="maestro_code.js"></script>
+</body>
+</html>
