@@ -4,11 +4,7 @@ var image_width = 70;
 var image_height = 70;
 var minutes;
 var error;
-var audio = new Audio("http://www.oringz.com/oringz-uploads/d0_oringz-pack-nine-06.mp3");
-// var name = prompt("Target's name?")
-// var message = prompt("Enter your message");
-// sendSms(message);
-// contacts = ["415-298-4987"];
+
 function checkNum(e){
   if(e.which == 13) {
     enterNum();
@@ -50,6 +46,7 @@ $('#newMsg').keypress(function(e) {
     sendMessage();
   }
 });
+
 Twilio.getLatestMessage(function(reply){
   audio.play();
   $('#messageIntro').append('<p class = "you">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="https://s-media-cache-ak0.pinimg.com/736x/a0/d8/8f/a0d88f742bd61c61320a35b5a295fb5b.jpg">'+'<b>'+'Victim: '+'</b>'+reply.Body+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
@@ -74,7 +71,14 @@ function sendMessage(){
     console.log("display")
     $('#errormsg').hide();
     var msg = $('#newMsg').val();
-    Twilio.sendMessage(number, msg);
+    var message = {
+      to: number,
+      from: "+14152125923",
+      body: msg
+    }
+    $.post("http://localhost:3000/sms", message, function( data ) {
+      $( ".result" ).html( data );
+    });
     // var date = new Date();
     // fixMinutes(date);
     // contacts.push = number;
