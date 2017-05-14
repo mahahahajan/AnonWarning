@@ -1,8 +1,8 @@
-const apiKeys = require("../apikeys.js");
+// const apiKeys = require("../apikeys.js");
 
 // Twilio Credentials
-const accountSid = apiKeys.accountSid;
-const authToken = apiKeys.authToken;
+const accountSid = process.env.accountSid;
+const authToken = process.env.authToken;
 // require the Twilio module and create a REST client
 const client = require('twilio')(accountSid, authToken);
 
