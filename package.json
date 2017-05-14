@@ -11,6 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/mahahahajan/AnonWarning.git"
   },
+  "engines": {
+    "node": "6.2.0",
+    "npm": "3.8.9"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
