@@ -47,18 +47,18 @@ $('#newMsg').keypress(function(e) {
   }
 });
 
-Twilio.getLatestMessage(function(reply){
-  audio.play();
-  $('#messageIntro').append('<p class = "you">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="https://s-media-cache-ak0.pinimg.com/736x/a0/d8/8f/a0d88f742bd61c61320a35b5a295fb5b.jpg">'+'<b>'+'Victim: '+'</b>'+reply.Body+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
-  $('#welcome').hide();
-  // console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
-});
+// Twilio.getLatestMessage(function(reply){
+//   audio.play();
+//   $('#messageIntro').append('<p class = "you">' + '<img style = "width: '+image_width+'px; height: '+image_height+'px;" src ="https://s-media-cache-ak0.pinimg.com/736x/a0/d8/8f/a0d88f742bd61c61320a35b5a295fb5b.jpg">'+'<b>'+'Victim: '+'</b>'+reply.Body+'<br>'+(new Date()).toTimeString().substr(0,5)+'</p>');
+//   $('#welcome').hide();
+//   // console.log("reply: "+reply.Body); //prints the number that sent a message to twilio-number
+// });
 function sendMessage(){
   if(enterNum()===false){
     enterNum();
   }
   var msg = $('#newMsg').val();
-  Twilio.sendMessage(number, msg);
+  // Twilio.sendMessage(number, msg);
 
   if(!(/\S/.test($('#newMsg').val()))){
     console.log("homg")
@@ -76,7 +76,7 @@ function sendMessage(){
       from: "+14152125923",
       body: msg
     }
-    $.post("http://localhost:3000/sms", message, function( data ) {
+    $.post("https://anonwarning.herokuapp.com/sms", message, function( data ) {
       $( ".result" ).html( data );
     });
     // var date = new Date();
