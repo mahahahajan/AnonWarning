@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
