@@ -1,18 +1,8 @@
-var accountSid;
-var authToken;
+// const apiKeys = require("../apikeys.js");
 
-if (process.env.NODE_ENV === 'production') {
-	console.log(process.env.NODE_ENV)
-	// Twilio Credentials from deployment
-	accountSid = process.env.accountSid;
-	authToken = process.env.authToken;
-} else {
-	const apiKeys = require("../apikeys.js");
-	// Twilio Credentials from local env
-	accountSid = apiKeys.accountSid;
-	authToken = apiKeys.authToken;
-}
-
+// Twilio Credentials
+const accountSid = process.env.accountSid;
+const authToken = process.env.authToken;
 // require the Twilio module and create a REST client
 const client = require('twilio')(accountSid, authToken);
 
@@ -25,15 +15,4 @@ exports.sendText = function (to, from, body, mediaUrl, callback) {
 	    mediaUrl: mediaUrl,
 	  })
 	  .then((err) => callback(err));
-}
-
-exports.retrieveConvo = function (to, from) {
-	var currentConvo = {
-	    to: to,
-	    from: from
-	};
-
-	client.messages.list(currentConvo, function(err, data) {
-	    console.log(data);
-	});
 }
